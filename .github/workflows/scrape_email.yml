@@ -23,6 +23,8 @@ jobs:
         
       - name: Install dependencies
         run: |
+          git config user.email "samuelbamgbola@gmail.com"
+          git config user.name "Samuel Bamgbola"
           python -m pip install --upgrade pip
           python -m pip install "dask[distributed]" --upgrade
           pip install -r requirements.txt
