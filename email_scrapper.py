@@ -18,8 +18,9 @@ def get_and_delete_file(folder_path):
     # Get the first file in the folder
     file_name = files[0]
     file_path = os.path.join(folder_path, file_name)
+    print(file_path)
     
-    sample = pd.read_xlsx(file_path)
+    sample = pd.read_excel(file_path)
 
     # Delete the file
     os.remove(file_path)
