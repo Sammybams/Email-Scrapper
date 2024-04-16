@@ -24,11 +24,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          python -m pip install "dask[distributed]" --upgrade
           pip install -r requirements.txt
 
       - name: Run Scrapper
         run: |
-          # Pass the secrests as environment variables to script
           python email_scrapper.py          
 
       - name: Check for changes
@@ -41,6 +41,6 @@ jobs:
         run: |
           git pull
           git add .
-          git commit -m "Updated leaderboard and resized images for Project 1."
-          git remote set-url origin https://$API_TOKEN@github.com/mlsanigeria/AI-Hacktober-MLSA.git
+          git commit -m "Scraped emails"
+          git remote set-url origin https://$API_TOKEN@github.com/Sammybams/Email-Scraper.git
           git push
