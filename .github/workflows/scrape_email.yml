@@ -44,5 +44,5 @@ jobs:
           git pull
           git add .
           git commit -m "Scraped emails"
-          git remote set-url origin https://$API_TOKEN@github.com/Sammybams/Email-Scraper.git
+          git remote set-url origin https://$API_TOKEN@github.com/Sammybams/Email-Scrapper.git
           git push
