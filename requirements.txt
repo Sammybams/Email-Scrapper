@@ -4,3 +4,4 @@ beautifulsoup4
 joblib
 requests
 regex
+openpyxl
