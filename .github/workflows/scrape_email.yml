@@ -30,6 +30,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Scrapper
+        env:
+          API_TOKEN: ${{ secrets.API_TOKEN }}
         run: |
           python email_scrapper.py          
 
