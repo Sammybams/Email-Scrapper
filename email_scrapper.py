@@ -30,7 +30,7 @@ def get_and_delete_file(folder_path):
 def email_extract(query):
     # query = "Mediterranean Finance Ltd (LICENCE REVOKED ON 04/01/2024)"
     # query = "WeChat Pay Europe B.V."
-    
+    print(query)
     suffix = ["", " email", "support", "info", "contact", "address", "help"]
     
     links = []
@@ -72,6 +72,8 @@ def email_extract(query):
             continue
         
     group = list(set(group))
+    print(", ".join(group))
+    print()
     return ", ".join(group)
 
 def clean_emails(sample):
