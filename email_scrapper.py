@@ -89,13 +89,13 @@ def clean_emails(sample):
             
     return ", ".join(sample)
 
-from dask.distributed import Client
-import joblib
-client = Client(processes=False)        # create local clust
+# from dask.distributed import Client
+# import joblib
+# client = Client(processes=False)        # create local clust
 
 
 sample_200, file_name = get_and_delete_file("./split")
-with joblib.parallel_backend('dask'):   
-    sample_200["Email_address"] = sample_200['ENT_NAM'].apply(email_extract)
-    sample_200['Email_address'] = sample_200['Email_address'].apply(clean_emails)
-    sample_200.to_excel(f"./extracted/{file_name}", index=False)
+# with joblib.parallel_backend('dask'):   
+sample_200["Email_address"] = sample_200['ENT_NAM'].apply(email_extract)
+sample_200['Email_address'] = sample_200['Email_address'].apply(clean_emails)
+sample_200.to_excel(f"./extracted/{file_name}", index=False)
